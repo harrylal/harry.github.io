@@ -1,0 +1,24 @@
+# Technical Overview
+
+The Marker-Free Connected AGV platform enables autonomous material transport in industrial environments without requiring floor markers, magnetic tape, or external localization infrastructure.
+
+## Navigation Stack
+
+Built on ROS 2 and Nav2, the navigation stack combines:
+
+- **2D Lidar SLAM** with loop closure for persistent map building
+- **Global path planning** using A* with dynamic re-planning
+- **Local obstacle avoidance** via DWB controller with costmap layers
+- **Omnidirectional drive** using mecanum wheel kinematics for precise docking
+
+## Fleet Coordination
+
+Multiple AGVs operate through an MQTT-based fleet management layer that handles task dispatch, traffic coordination, and collision avoidance at the fleet level. Each AGV reports pose, battery status, and task progress in real time.
+
+## Edge Deployment
+
+All perception and planning runs on NVIDIA Jetson Xavier NX modules mounted on each AGV. Models are containerized with Docker and updated over-the-air through a centralized deployment pipeline.
+
+## Key Results
+
+Deployed across 12 AGVs in a single factory, achieving ±2cm docking accuracy and a 40% throughput increase over manual material handling workflows.

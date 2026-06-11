@@ -1,0 +1,24 @@
+# Technical Overview
+
+The AI Driver Monitoring System (DMS) provides real-time attention and drowsiness detection for commercial fleet operators, deployed across 5,000+ vehicles with an edge-cloud hybrid architecture.
+
+## Perception Pipeline
+
+The in-cabin camera feed is processed through a multi-stage pipeline:
+
+1. **Face detection and mesh estimation** using optimized MediaPipe models
+2. **Head pose estimation** for gaze direction inference
+3. **Temporal attention scoring** with frame-level confidence aggregation
+4. **LSTM-based drowsiness classifier** operating on 30-second sliding windows
+
+## Edge-Cloud Architecture
+
+Each vehicle runs TensorFlow Lite models on embedded hardware for real-time inference. Safety events (drowsiness alerts, distraction warnings) are streamed to a cloud aggregation layer via Kafka, enabling fleet-wide analytics dashboards and model performance monitoring.
+
+## Model Updates
+
+An OTA update pipeline allows model improvements to be deployed across the fleet without physical device access. Updates are staged with canary deployments — 5% of fleet first, then full rollout after validation metrics confirm no regression.
+
+## Key Results
+
+97% drowsiness detection accuracy with a 28% reduction in fatigue-related incidents across deployed fleets, validated over 18 months of operational data.

@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+:root {
+  /* Copper & Stone — warm editorial palette */
+  --canvas: #f3efe6;
+  --surface: #fdfbf7;
+  --surface-muted: #ebe5da;
+  --surface-alt: #e4ddd2;
+  --ink: #1c1917;
+  --ink-muted: #78716c;
+  --copper: #c25e2e;
+  --copper-soft: #fdf0e8;
+  --copper-glow: #e07a45;
+  --forest: #1d5c4a;
+  --forest-soft: #e4f0ec;
+  --midnight: #141210;
+  --cream: #faf8f5;
+  --border: #d6cfc3;
+
+  /* Legacy token aliases */
+  --violet: var(--copper);
+  --violet-soft: var(--copper-soft);
+  --violet-glow: var(--copper-glow);
+  --cyan: var(--forest);
+  --cyan-soft: var(--forest-soft);
+  --coral: #d97706;
+  --coral-soft: #fef3c7;
+  --warm-white: var(--canvas);
+  --soft-ivory: var(--surface-muted);
+  --deep-navy: var(--ink);
+  --electric-blue: var(--copper);
+  --sage-green: var(--forest);
+  --light-gray: var(--border);
+  --background: var(--canvas);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-alt: var(--surface-alt);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-copper: var(--copper);
+  --color-copper-soft: var(--copper-soft);
+  --color-copper-glow: var(--copper-glow);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-midnight: var(--midnight);
+  --color-cream: var(--cream);
+  --color-border: var(--border);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-violet-glow: var(--violet-glow);
+  --color-cyan: var(--cyan);
+  --color-cyan-soft: var(--cyan-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-warm-white: var(--warm-white);
+  --color-soft-ivory: var(--soft-ivory);
+  --color-deep-navy: var(--deep-navy);
+  --color-electric-blue: var(--electric-blue);
+  --color-sage-green: var(--sage-green);
+  --color-light-gray: var(--light-gray);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--copper);
+  --color-accent-soft: var(--copper-soft);
+  --color-teal: var(--forest);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-instrument-serif);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--copper) 20%, transparent);
+  color: var(--ink);
+}
+
+/* Layout */
+.site-container {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-20 md:py-28 lg:py-32;
+}
+
+.section-header {
+  @apply mb-12 max-w-2xl md:mb-16;
+}
+
+/* Typography */
+.gradient-text {
+  background: linear-gradient(120deg, var(--copper) 0%, var(--forest) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-label {
+  @apply font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-forest;
+}
+
+.section-title {
+  @apply font-serif text-3xl font-normal leading-[1.08] tracking-tight text-ink sm:text-4xl md:text-5xl;
+}
+
+.section-desc {
+  @apply mt-4 text-base leading-relaxed text-ink-muted md:text-lg;
+}
+
+/* Surfaces */
+.card-surface {
+  @apply rounded-2xl border border-border/70 bg-surface;
+  box-shadow:
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 8px 32px rgba(28, 25, 23, 0.05);
+  transition:
+    box-shadow 0.4s ease,
+    transform 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.card-surface:hover {
+  border-color: color-mix(in srgb, var(--copper) 25%, var(--border));
+  box-shadow:
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 16px 48px rgba(28, 25, 23, 0.08);
+}
+
+/* Section rhythm */
+.section-band-light {
+  background: var(--canvas);
+}
+
+.section-band-surface {
+  background: var(--surface);
+}
+
+.section-band-muted {
+  background: var(--surface-muted);
+}
+
+.section-band-dark {
+  background: var(--midnight);
+  color: var(--cream);
+}
+
+/* ---- Persistent 3D world layering ---- */
+html {
+  background: var(--canvas);
+}
+
+body {
+  background: transparent;
+}
+
+.world-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Frosted glass panels that float over the live 3D world */
+.glass-panel {
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid color-mix(in srgb, #ffffff 55%, var(--border));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 18px 60px rgba(28, 25, 23, 0.12);
+}
+
+.glass-card {
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  border: 1px solid color-mix(in srgb, #ffffff 45%, var(--border));
+  box-shadow: 0 10px 40px rgba(28, 25, 23, 0.08);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.glass-card:hover {
+  border-color: color-mix(in srgb, var(--copper) 40%, transparent);
+  box-shadow: 0 24px 70px rgba(28, 25, 23, 0.16);
+}
+
+.glass-dark {
+  background: color-mix(in srgb, var(--midnight) 70%, transparent);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Animated copper↔forest gradient title */
+.gradient-animate {
+  background: linear-gradient(
+    100deg,
+    var(--copper) 0%,
+    var(--copper-glow) 30%,
+    var(--forest) 65%,
+    var(--copper) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-pan 7s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-eyebrow {
+  @apply font-mono text-[11px] font-medium uppercase tracking-[0.32em] text-copper;
+}
+
+.section-heading {
+  @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-5xl;
+}
+
+/* Floating ambient blobs */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) scale(1.06);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+/* Marquee for tech ticker */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--copper) 40%, transparent),
+    0 0 28px color-mix(in srgb, var(--copper) 30%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-animate,
+  .animate-float-slow,
+  .animate-marquee {
+    animation: none;
+  }
+}
