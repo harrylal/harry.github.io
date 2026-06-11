@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harry Lal — Portfolio</title>
+  <meta name="description" content="Harry Lal — Creative Developer & Designer. Building digital experiences." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#hero" class="nav-logo">HL</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button type="button" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☽</span>
+      </button>
+      <button type="button" class="nav-burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="nav-overlay">
+      <ul class="nav-overlay-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-bg">
+        <div class="hero-gradient"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-label reveal">Hello, I'm</p>
+        <h1 class="hero-title reveal">
+          <span class="line">Harry</span>
+          <span class="line accent">Lal.</span>
+        </h1>
+        <p class="hero-tagline reveal">I craft digital experiences — code, design & everything in between.</p>
+        <div class="hero-cta reveal">
+          <a href="#work" class="btn btn-primary">
+            <span>View my work</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/harry-lal/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <div class="about-card">
+              <div class="about-card-inner">
+                <div class="about-avatar">
+                  <span>HL</span>
+                </div>
+                <div class="about-card-glow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-text reveal">
+            <p class="about-lead">I'm a creative problem-solver who loves turning ideas into polished products.</p>
+            <p>With a blend of design sensibility and technical depth, I build interfaces and experiences that are both beautiful and functional. I believe in clean code, thoughtful UX, and continuous learning.</p>
+            <p>When I'm not coding, you'll find me exploring new tools, contributing to open source, or sketching the next big idea.</p>
+            <a href="#contact" class="link-arrow">Let's connect</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Skills & Tools</h2>
+        </div>
+        <div class="skills-bento reveal">
+          <div class="bento-item bento-wide">
+            <span class="bento-icon">◆</span>
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, React, TypeScript, responsive design, animations</p>
+          </div>
+          <div class="bento-item">
+            <span class="bento-icon">◇</span>
+            <h3>Backend</h3>
+            <p>Node.js, APIs, databases</p>
+          </div>
+          <div class="bento-item">
+            <span class="bento-icon">○</span>
+            <h3>Design</h3>
+            <p>UI/UX, Figma, prototyping</p>
+          </div>
+          <div class="bento-item bento-wide">
+            <span class="bento-icon">▣</span>
+            <h3>Tools & More</h3>
+            <p>Git, VS Code, Linux, problem-solving, collaboration</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Selected Work</h2>
+        </div>
+        <div class="work-list">
+          <article class="work-card reveal">
+            <div class="work-card-bg"></div>
+            <div class="work-card-content">
+              <span class="work-category">Web App</span>
+              <h3>Project Alpha</h3>
+              <p>A modern web application with real-time features and a polished UI. Built with React and a scalable backend.</p>
+              <div class="work-tags">
+                <span>React</span><span>TypeScript</span><span>API</span>
+              </div>
+              <a href="#" class="work-link" aria-label="View Project Alpha">
+                <span>View project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-bg"></div>
+            <div class="work-card-content">
+              <span class="work-category">Portfolio / Brand</span>
+              <h3>Creative Studio</h3>
+              <p>Brand identity and interactive portfolio for a design studio. Custom animations and a distinctive visual language.</p>
+              <div class="work-tags">
+                <span>Design</span><span>CSS</span><span>GSAP</span>
+              </div>
+              <a href="#" class="work-link" aria-label="View Creative Studio">
+                <span>View project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg>
+              </a>
+            </div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-bg"></div>
+            <div class="work-card-content">
+              <span class="work-category">Open Source</span>
+              <h3>Dev Tools</h3>
+              <p>Developer utilities and CLI tools to streamline workflows. Used by teams for faster iteration.</p>
+              <div class="work-tags">
+                <span>Node</span><span>CLI</span><span>Open Source</span>
+              </div>
+              <a href="#" class="work-link" aria-label="View Dev Tools">
+                <span>View project</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-8M17 7v8"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Get in touch</h2>
+        </div>
+        <div class="contact-content reveal">
+          <p class="contact-lead">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/harry-lal/?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <span class="contact-card-icon">in</span>
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-arrow">→</span>
+            </a>
+            <a href="mailto:hello@harrylal.com" class="contact-card">
+              <span class="contact-card-icon">@</span>
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-arrow">→</span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <span class="contact-card-icon">⌘</span>
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Harry Lal. Designed & built with care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
