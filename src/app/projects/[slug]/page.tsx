@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { withBasePath } from "@/lib/paths";
 import VisionBasedAeb from "@/content/projects/vision-based-aeb.mdx";
 import MarkerFreeAgv from "@/content/projects/marker-free-agv.mdx";
 
@@ -51,7 +52,7 @@ export default async function ProjectPage({
       <div className="mt-8 overflow-hidden rounded-2xl border border-light-gray">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={project.image}
+          src={withBasePath(project.image)}
           alt={project.title}
           className="w-full object-cover"
         />

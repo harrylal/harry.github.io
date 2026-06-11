@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 import { projects } from "@/data/projects";
+import { withBasePath } from "@/lib/paths";
 import { Reveal } from "@/components/ui/Motion";
 
 export function ScrollWork() {
@@ -57,7 +58,7 @@ function WorkChapter({
         <div className={`overflow-hidden rounded-2xl ${reversed ? "md:[direction:ltr]" : ""}`}>
           <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-surface-muted">
             <motion.img
-              src={project.image}
+              src={withBasePath(project.image)}
               alt={project.title}
               style={{ y: imageY, scale: imageScale }}
               className="h-full w-full object-cover"

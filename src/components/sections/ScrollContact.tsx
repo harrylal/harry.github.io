@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { contactLinks, profile } from "@/data/site";
+import { withBasePath } from "@/lib/paths";
 import { Reveal, Magnetic } from "@/components/ui/Motion";
 
 const links = [
